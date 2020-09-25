@@ -12,6 +12,10 @@ def decipherRType(trailer):
 
 
 if __name__ == '__main__':
+    print("Input format: ")
+    print("   I-type: op rd,rs,imm")
+    print("   R-type: op rd rs rt")
+    print("   j-type: j addr")
 
     print("Example input: ")
     print("    lw 0,1,0")
