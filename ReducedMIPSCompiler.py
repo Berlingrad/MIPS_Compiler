@@ -13,7 +13,7 @@ def decipherRType(trailer):
 
 if __name__ == '__main__':
     print("Input format: ")
-    print("   I-type: op rd,rs,imm")
+    print("   I-type: op rt,rs,imm")
     print("   R-type: op rd,rs,rt")
     print("   j-type: j addr")
 
@@ -24,7 +24,7 @@ if __name__ == '__main__':
     with open('imem.txt', 'w') as outputFile, open('imemHumanReadable.txt', 'w') as outputHFile:
         while True:
             instr = input("Enter a MIPS instruction(Enter 'EXIT' to terminate): ")
-            outputHFile.write(instr)
+            outputHFile.write(instr+os.linesep*4)
             instrComps = instr.split()
             if instrComps[0].lower() == "exit":
                 [outputFile.write("11111111"+os.linesep) for i in range(4)]
