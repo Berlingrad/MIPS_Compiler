@@ -12,6 +12,11 @@ def decipherRType(trailer):
 
 
 if __name__ == '__main__':
+
+    print("Example input: ")
+    print("    lw 0,1,0")
+    print("    addu 1,2,3")
+    print("    j 14")
     with open('imem.txt', 'w') as outputFile, open('imemHumanReadable.txt', 'w') as outputHFile:
         while True:
             instr = input("Enter a MIPS instruction(Enter 'EXIT' to terminate): ")
