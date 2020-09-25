@@ -28,7 +28,9 @@ if __name__ == '__main__':
             elif instrComps[0].lower() == "jump" or instrComps[0].lower() == "j":
                 opcode = "000010"
                 jAddr = instrComps[1]
-                toWrite = opcode + jAddr
+                toWrite = opcode + format(int(jAddr), "026b")
+
+
             elif instrComps[0].lower() == "addiu":
                 toWrite = "001001"+ decipherIType(instrComps[1])
             elif instrComps[0].lower() == "beq":
