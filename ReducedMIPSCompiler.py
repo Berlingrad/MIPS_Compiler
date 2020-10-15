@@ -12,15 +12,20 @@ def decipherRType(trailer):
 
 
 if __name__ == '__main__':
-    print("Input format: ")
-    print("   I-type: op rt,rs,imm")
-    print("   R-type: op rd,rs,rt")
-    print("   j-type: j addr")
-
-    print("Example input: ")
-    print("    lw 0,1,0")
-    print("    addu 1,2,3")
-    print("    j 14")
+    print("""
+    Input format: 
+       I-type: op rt,rs,imm
+       R-type: op rd,rs,rt
+       j-type: j addr
+    """
+          )
+    print("""
+    Example input:
+        lw 0,1,0
+        addu 1,2,3
+        j 14
+    """
+          )
     with open('imem.txt', 'w') as outputFile, open('imemHumanReadable.txt', 'w') as outputHFile:
         while True:
             instr = input("Enter a MIPS instruction(Enter 'EXIT' to terminate): ")
