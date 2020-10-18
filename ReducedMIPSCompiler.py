@@ -31,32 +31,32 @@ if __name__ == '__main__':
             instr = input("Enter a MIPS instruction(Enter 'EXIT' to terminate): ")
             outputHFile.write(instr+os.linesep*4)
             instrComps = instr.split()
-            if instrComps[0].lower() == "exit":
+            if instrComps[0].lower().strip() == "exit":
                 [outputFile.write("11111111"+os.linesep) for i in range(4)]
                 break
-            elif instrComps[0].lower() == "jump" or instrComps[0].lower() == "j":
+            elif instrComps[0].lower().strip() == "jump" or instrComps[0].lower().strip() == "j":
                 opcode = "000010"
                 jAddr = instrComps[1]
                 toWrite = opcode + format(int(jAddr), "026b")
 
 
-            elif instrComps[0].lower() == "addiu":
+            elif instrComps[0].lower().strip() == "addiu":
                 toWrite = "001001"+ decipherIType(instrComps[1])
-            elif instrComps[0].lower() == "beq":
+            elif instrComps[0].lower().strip() == "beq":
                 toWrite = "000100" + decipherIType(instrComps[1])
-            elif instrComps[0].lower() == "lw":
+            elif instrComps[0].lower().strip() == "lw":
                 toWrite = "100011" + decipherIType(instrComps[1])
-            elif instrComps[0].lower() == "sw":
+            elif instrComps[0].lower().strip() == "sw":
                 toWrite = "101011" + decipherIType(instrComps[1])
-            elif instrComps[0].lower() == "addu":
+            elif instrComps[0].lower().strip() == "addu":
                 toWrite = "000000" + decipherRType(instrComps[1]) + "00000" + "100001"
-            elif instrComps[0].lower() == "subu":
+            elif instrComps[0].lower().strip() == "subu":
                 toWrite = "000000" + decipherRType(instrComps[1]) + "00000" + "100011"
-            elif instrComps[0].lower() == "and":
+            elif instrComps[0].lower().strip() == "and":
                 toWrite = "000000" + decipherRType(instrComps[1]) + "00000" + "100100"
-            elif instrComps[0].lower() == "or":
+            elif instrComps[0].lower().strip() == "or":
                 toWrite = "000000" + decipherRType(instrComps[1]) + "00000" + "100101"
-            elif instrComps[0].lower() == "nor":
+            elif instrComps[0].lower().strip() == "nor":
                 toWrite = "000000" + decipherRType(instrComps[1]) + "00000" + "100111"
             else:
                 raise ValueError("Invalid command")
