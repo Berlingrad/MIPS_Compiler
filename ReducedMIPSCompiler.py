@@ -14,7 +14,7 @@ def decipherRType(trailer):
 if __name__ == '__main__':
     print("""
     Input format: 
-       I-type: op rt,rs,imm
+       I-type: op rs,rt,imm
        R-type: op rd,rs,rt
        j-type: j addr
     """
